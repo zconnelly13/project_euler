@@ -9,15 +9,8 @@ What is the 10,001st prime number?
 """
 
 
-def primes_sieve(limit):
-    a = [True] * limit
-    a[0] = a[1] = False
+from tools import primes_sieve
 
-    for i, isprime in enumerate(a):
-        if isprime:
-            yield i
-            for n in xrange(i*i, limit, i):
-                a[n] = False
 
 for i, j in enumerate(primes_sieve(1000000)):
     if i == 10000:
