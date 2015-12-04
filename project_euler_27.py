@@ -27,16 +27,11 @@ values of n, starting with n = 0.
 
 
 from tools import primes_sieve
+from tools import quadratic
 
 lower_bound = -1000
 upper_bound = 1000
 prime_dict = {prime: True for prime in primes_sieve(10000)}
-
-
-def quadratic(a, b):
-    def quad(n):
-        return n**2 + a*n + b
-    return quad
 
 
 def consecutive_primes(f):
