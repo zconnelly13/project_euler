@@ -34,7 +34,7 @@ def proper_divisor_generator(n):
             yield divisor
 
 
-def quadratic(a, b):
+def quadratic(a, b, c):
     def quad(n):
-        return n**2 + a*n + b
+        return a*n**2 + b*n + c
     return quad

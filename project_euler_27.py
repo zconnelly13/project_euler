@@ -40,7 +40,7 @@ def consecutive_primes(f):
         n += 1
     return n
 
-l = [(consecutive_primes(quadratic(a, b)), a * b)
+l = [(consecutive_primes(quadratic(1, a, b)), a * b)
      for a in xrange(lower_bound, upper_bound)
      for b in xrange(lower_bound, upper_bound)]
 
