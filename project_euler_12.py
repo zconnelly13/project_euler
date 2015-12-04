@@ -24,18 +24,8 @@ What is the value of the first triangle number to have over five hundred
 divisors?
 """
 
-from math import sqrt
+from tools import divisor_generator
 
-
-def divisor_generator(n):
-    large_divisors = []
-    for i in xrange(1, int(sqrt(n) + 1)):
-        if n % i == 0:
-            yield i
-            if i*i != n:
-                large_divisors.append(n / i)
-    for divisor in reversed(large_divisors):
-        yield divisor
 
 divisors = 0
 tri = 1
