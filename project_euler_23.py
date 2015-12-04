@@ -21,6 +21,21 @@ Find the sum of all the positive integers which cannot be written as the sum
 of two abundant numbers.
 """
 
+"""
+#Notes
+
+Originally I did something like...
+
+```
+expressable_as_sums = [
+    n for n in range(0, upper_limit)
+    if n not in 
+    [x + y for x in abundant_numbers for y in abundant_numbers]]
+```
+
+But this was hella slow and oomed : /
+"""
+
 from tools import proper_divisor_generator
 
 
@@ -28,10 +43,19 @@ upper_limit = 28123
 
 abundant_numbers = [n for n in range(0, upper_limit)
                     if n < sum(proper_divisor_generator(n))]
+abundant_numbers_reversed = abundant_numbers[::-1]
 
-expressable_as_sums = [
-    n for n in range(0, upper_limit)
-    if n not in
-    [x + y for x in abundant_numbers for y in abundant_numbers]]
+not_expressable_as_sum = range(0, upper_limit+1)
+for x in xrange(0, len(abundant_numbers)):
+    for y in xrange(0, len(abundant_numbers_reversed)):
+        n1 = abundant_numbers[x]
+        n2 = abundant_numbers_reversed[y]
+        if n1 + n2 <= upper_limit:
+            not_expressable_as_sum[n1 + n2] = 0
+        else:
+            continue
+    if n1 + n2 > upper_limit:
+        continue
 
-print(sum(expressable_as_sums))
+print sum(not_expressable_as_sum)
+
