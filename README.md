@@ -36,10 +36,12 @@ Where * is the number of the problem
 To test that all of the problem.py files still work, run
 
 ```
-python test.py
+nosetests
 ```
 
 this is necessary because some of the problem share code
 particularly in `tools/`
 
 This takes a while as some of the scripts take longer to run than others
+
+This repo also uses [travis-ci](https://travis-ci.org/zconnelly13/project_euler/builds)
