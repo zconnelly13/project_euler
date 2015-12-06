@@ -42,7 +42,8 @@ SOLUTIONS = {
     32: 45228,
     33: 100,
     34: 40730,
-    35: 55}
+    35: 55,
+    36: 872187}
 
 
 class TestSolutions(unittest.TestCase):
@@ -53,7 +54,7 @@ class TestSolutions(unittest.TestCase):
         For each problem import the module, capture the stdout
         and compare it to SOLUTIONS
         """
-        number_of_problems = len(SOLUTIONS.keys() + 1)
+        number_of_problems = len(SOLUTIONS.keys()) + 1
         for problem in range(1, number_of_problems):
             old_stdout = sys.stdout
             sys.stdout = mystdout = StringIO()
