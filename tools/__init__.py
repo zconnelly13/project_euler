@@ -32,3 +32,9 @@ def proper_divisor_generator(n):
     for divisor in divisor_generator(n):
         if divisor < n:
             yield divisor
+
+
+def quadratic(a, b, c):
+    def quad(n):
+        return a*n**2 + b*n + c
+    return quad

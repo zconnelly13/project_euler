@@ -2,6 +2,7 @@
 Problem 32
 ==========
 
+<<<<<<< HEAD
 We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n
 exactly once; for example, the 5-digit number, 15234, is a 1 through 5 pandigital.
 
