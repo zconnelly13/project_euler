@@ -44,5 +44,5 @@ def is_pandigital(n):
     n = sorted(list(str(n)))
     return (
         n == sorted(list(set(n))) and
-        len(n) == 9 and
+        n[-1] == str(len(n)) and
         '0' not in n)
