@@ -3,9 +3,6 @@ Commonly used functions in pje problems
 """
 
 
-from math import sqrt
-
-
 def primes_sieve(limit):
     a = [True] * limit
     a[0] = a[1] = False
@@ -18,6 +15,7 @@ def primes_sieve(limit):
 
 
 def divisor_generator(n):
+    from math import sqrt
     large_divisors = []
     for i in xrange(1, int(sqrt(n) + 1)):
         if n % i == 0:
