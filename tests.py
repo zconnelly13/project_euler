@@ -60,7 +60,7 @@ class TestSolutions(unittest.TestCase):
         for problem in range(1, number_of_problems):
             old_stdout = sys.stdout
             sys.stdout = mystdout = StringIO()
-            __import__("problem_%s" % str(problem))
+            __import__("problems.problem_%s" % str(problem))
             sys.stdout = old_stdout
             solution = int(mystdout.getvalue())
             self.assertEqual(SOLUTIONS[problem], solution)
