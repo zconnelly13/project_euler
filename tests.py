@@ -46,7 +46,8 @@ SOLUTIONS = {
     35: 55,
     36: 872187,
     37: 748317,
-    38: 932718654}
+    38: 932718654,
+    39: 840}
 
 
 class TestSolutions(unittest.TestCase):
