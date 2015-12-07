@@ -40,9 +40,9 @@ def quadratic(a, b, c):
     return quad
 
 
-def is_pandigital(a, b):
-    identity = sorted(list(str(a) + str(b) + str(a*b)))
+def is_pandigital(n):
+    n = sorted(list(str(n)))
     return (
-        identity == sorted(list(set(identity))) and
-        len(identity) == 9 and
-        '0' not in identity)
+        n == sorted(list(set(n))) and
+        len(n) == 9 and
+        '0' not in n)
