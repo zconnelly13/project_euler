@@ -30,17 +30,8 @@ def scrunch(bigger_row, smaller_row):
     """Climb the tree from the bottom taking the greatest sum as you go
 
     """
-    def get(l, index):
-        """'Safe' get method for lists
-
-        """
-        try:
-            value = l[index]
-        except IndexError:
-            value = 0
-        return value
     # return the greatest sum out of the two touching numbers in the tree
-    return [max([value+get(bigger_row, i), value+get(bigger_row, i+1)])
+    return [max([value+bigger_row[i], value+bigger_row[i+1]])
             for i, value in enumerate(smaller_row)]
 
 scrunched = reduce(
