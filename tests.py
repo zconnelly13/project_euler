@@ -51,7 +51,8 @@ SOLUTIONS = {
     40: 210,
     41: 7652413,
     42: 162,
-    43: 16695334890}
+    43: 16695334890,
+    44: 5482660}
 
 
 class TestSolutions(unittest.TestCase):
