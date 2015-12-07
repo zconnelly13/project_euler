@@ -1,7 +1,7 @@
 Project Euler Solutions
 =============
 
-![Build Status](https://travis-ci.org/zconnelly13/project_euler.svg?branch=master)
+[![Build Status](https://travis-ci.org/zconnelly13/project_euler.svg?branch=master)](https://travis-ci.org/zconnelly13/project_euler)
 
 Solutions to some of the problems found here, https://projecteuler.net/ in python!
 
