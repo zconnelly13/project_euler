@@ -24,12 +24,14 @@ pandigital_products = [
     a*b
     for a in range(1000)
     for b in range(1000)
-    if is_pandigital(identity(a, b))]
+    if is_pandigital(identity(a, b)) and
+    len(str(identity(a, b))) == 9]
 
 pandigital_products.extend([
     a*b
     for a in range(10)
     for b in range(1000, 10000)
-    if is_pandigital(identity(a, b))])
+    if is_pandigital(identity(a, b)) and
+    len(str(identity(a, b))) == 9])
 
 print(sum(set(pandigital_products)))
