@@ -38,3 +38,11 @@ def quadratic(a, b, c):
     def quad(n):
         return a*n**2 + b*n + c
     return quad
+
+
+def is_pandigital(n):
+    n = sorted(list(str(n)))
+    return (
+        n == sorted(list(set(n))) and
+        len(n) == 9 and
+        '0' not in n)
