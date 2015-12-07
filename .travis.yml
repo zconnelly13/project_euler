@@ -4,4 +4,4 @@ python:
 # command to install dependencies
 install: "pip install -r setup/requirements.txt"
 # command to run tests
-script: nosetests --with-coverage --cover-package=problems --cover-package=tools --cover-min-percentage=100
+script: nosetests -v --with-timer --with-coverage --cover-package=problems --cover-package=tools --cover-min-percentage=100

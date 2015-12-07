@@ -6,6 +6,7 @@ This is necessary because some solutions share code in `tools`
 import unittest
 import sys
 from cStringIO import StringIO
+from nose_parameterized import parameterized
 
 SOLUTIONS = {
     1: 233168,
@@ -51,19 +52,20 @@ SOLUTIONS = {
 class TestSolutions(unittest.TestCase):
     """ Test Solutions to each problem_*
     """
-    def test_problems(self):
+    number_of_problems = len(SOLUTIONS.keys()) + 1
+
+    @parameterized.expand([(i,) for i in range(1, number_of_problems)])
+    def test_problem(self, problem):
         """
         For each problem import the module, capture the stdout
         and compare it to SOLUTIONS
         """
-        number_of_problems = len(SOLUTIONS.keys()) + 1
-        for problem in range(1, number_of_problems):
-            old_stdout = sys.stdout
-            sys.stdout = mystdout = StringIO()
-            __import__("problems.problem_%s" % str(problem))
-            sys.stdout = old_stdout
-            solution = int(mystdout.getvalue())
-            self.assertEqual(SOLUTIONS[problem], solution)
+        old_stdout = sys.stdout
+        sys.stdout = mystdout = StringIO()
+        __import__("problems.problem_%s" % str(problem))
+        sys.stdout = old_stdout
+        solution = int(mystdout.getvalue())
+        self.assertEqual(SOLUTIONS[problem], solution)
 
 if __name__ == '__main__':
     unittest.main()
