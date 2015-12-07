@@ -26,7 +26,7 @@ pip install -r setup/requirements.txt
 To "solve" a problem run
 
 ```
-python problem_*.py
+python problems/problem_*.py
 ```
 
 Where * is the number of the problem
@@ -45,3 +45,7 @@ particularly in `tools/`
 This takes a while as some of the scripts take longer to run than others
 
 This repo also uses [travis-ci](https://travis-ci.org/zconnelly13/project_euler/builds)
+
+#### Why require 100% coverage?
+
+This ensures that there is no dead code and that if I add a problem file I also add it to the list of solutions that I test against
